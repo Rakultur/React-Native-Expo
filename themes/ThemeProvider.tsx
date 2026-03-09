@@ -8,36 +8,36 @@ const ThemeContext = createContext<any>(null)
 
 export function ThemeProvider({ children }: any) {
 
-const [theme, setTheme] = useState(lightTheme)
+    const [theme, setTheme] = useState(lightTheme)
 
-return (
+    return (
 
-<ThemeContext.Provider
-value={{
-theme,
-setTheme,
-lightTheme,
-darkTheme,
-customTheme
-}}
->
+        <ThemeContext.Provider
+            value={{
+                theme,
+                setTheme,
+                lightTheme,
+                darkTheme,
+                customTheme
+            }}
+        >
 
-{children}
+            {children}
 
-</ThemeContext.Provider>
+        </ThemeContext.Provider>
 
-)
+    )
 
 }
 
-export function useTheme(){
+export function useTheme() {
 
-const context = useContext(ThemeContext)
+    const context = useContext(ThemeContext)
 
-if(!context){
-throw new Error("useTheme must be used inside ThemeProvider")
-}
+    if (!context) {
+        throw new Error("useTheme must be used inside ThemeProvider")
+    }
 
-return context
+    return context
 
 }

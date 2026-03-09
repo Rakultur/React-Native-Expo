@@ -2,9 +2,17 @@ import { Link } from "expo-router"
 import React from "react"
 import { Pressable, Text, View } from "react-native"
 
+import { useTheme } from "../themes/ThemeProvider"
+
 export default function Home() {
 
-    const themes = ["Light", "Dark", "System"]
+    const { theme, setTheme, lightTheme, darkTheme, customTheme } = useTheme()
+
+    const themes = [
+        { name: "Light", value: lightTheme },
+        { name: "Dark", value: darkTheme },
+        { name: "Custom", value: customTheme }
+    ]
 
     return (
 
@@ -12,17 +20,22 @@ export default function Home() {
             style={{
                 flex: 1,
                 justifyContent: "center",
-                padding: 30,
-                gap: 40
+                alignItems: "center",
+                width: "100%",
+                padding: theme.spacing.lg,
+                gap: theme.spacing.lg,
+                backgroundColor: theme.colors.background
             }}
         >
 
             {/* Header */}
-            <View style={{ gap: 6 }}>
+            <View style={{ gap: theme.spacing.xs }}>
                 <Text
                     style={{
                         fontSize: 32,
-                        fontWeight: "bold"
+                        fontWeight: "bold",
+                        color: theme.colors.text,
+                        fontFamily: theme.typography.fontFamily
                     }}
                 >
                     Componentes y diseños RKT_Dev
@@ -31,29 +44,45 @@ export default function Home() {
 
 
             {/* Theme Switcher */}
-            <View style={{ gap: 10 }}>
-                <Text style={{ fontWeight: "600", fontSize: 16 }}>
+            <View style={{ gap: theme.spacing.sm }}>
+                <Text
+                    style={{
+                        fontWeight: "600",
+                        fontSize: 16,
+                        color: theme.colors.text
+                    }}
+                >
                     Theme
                 </Text>
 
                 <View
                     style={{
                         flexDirection: "row",
-                        gap: 10
+                        gap: theme.spacing.sm
                     }}
                 >
 
-                    {themes.map((theme) => (
+                    {themes.map((item) => (
                         <Pressable
-                            key={theme}
+                            key={item.name}
+                            onPress={() => setTheme(item.value)}
                             style={{
                                 paddingVertical: 10,
                                 paddingHorizontal: 16,
-                                borderRadius: 8,
-                                backgroundColor: "#e5e7eb"
+                                borderRadius: Number(theme.radius.md.replace("px", "")),
+                                backgroundColor: theme.colors.surface,
+                                borderWidth: 1,
+                                borderColor: theme.colors.border
                             }}
                         >
-                            <Text>{theme}</Text>
+                            <Text
+                                style={{
+                                    color: theme.colors.text,
+                                    fontWeight: "500"
+                                }}
+                            >
+                                {item.name}
+                            </Text>
                         </Pressable>
                     ))}
 
@@ -62,29 +91,61 @@ export default function Home() {
 
 
             {/* Navigation */}
-            <View style={{ gap: 15 }}>
+            <View style={{ gap: theme.spacing.sm }}>
 
                 <Link href="/components" asChild>
-                    <Pressable style={card("#222222")}>
-                        <Text style={cardText}>Components</Text>
+                    <Pressable
+                        style={{
+                            padding: theme.spacing.sm,
+                            borderRadius: Number(theme.radius.md.replace("px", "")),
+                            backgroundColor: theme.colors.primary
+                        }}
+                    >
+                        <Text style={{ color: "#fff", fontWeight: "600" }}>
+                            Components
+                        </Text>
                     </Pressable>
                 </Link>
 
                 <Link href="/dashboard" asChild>
-                    <Pressable style={card("#222222")}>
-                        <Text style={cardText}>Dashboard</Text>
+                    <Pressable
+                        style={{
+                            padding: theme.spacing.sm,
+                            borderRadius: Number(theme.radius.md.replace("px", "")),
+                            backgroundColor: theme.colors.primary
+                        }}
+                    >
+                        <Text style={{ color: "#fff", fontWeight: "600" }}>
+                            Dashboard
+                        </Text>
                     </Pressable>
                 </Link>
 
                 <Link href="/social" asChild>
-                    <Pressable style={card("#222222")}>
-                        <Text style={cardText}>Social</Text>
+                    <Pressable
+                        style={{
+                            padding: theme.spacing.sm,
+                            borderRadius: Number(theme.radius.md.replace("px", "")),
+                            backgroundColor: theme.colors.primary
+                        }}
+                    >
+                        <Text style={{ color: "#fff", fontWeight: "600" }}>
+                            Social
+                        </Text>
                     </Pressable>
                 </Link>
 
                 <Link href="/gallery" asChild>
-                    <Pressable style={card("#222222")}>
-                        <Text style={cardText}>Component Gallery</Text>
+                    <Pressable
+                        style={{
+                            padding: theme.spacing.sm,
+                            borderRadius: Number(theme.radius.md.replace("px", "")),
+                            backgroundColor: theme.colors.primary
+                        }}
+                    >
+                        <Text style={{ color: "#fff", fontWeight: "600" }}>
+                            Component Gallery
+                        </Text>
                     </Pressable>
                 </Link>
 
@@ -92,18 +153,4 @@ export default function Home() {
 
         </View>
     )
-}
-
-
-const card = (color: string) => ({
-    padding: 18,
-    borderRadius: 12,
-    backgroundColor: color,
-})
-
-const cardText = {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "600",
-    textAlign: "center"
 }
