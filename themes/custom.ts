@@ -1,57 +1,38 @@
-import { ThemeType } from "./types"
+import { breakpoints } from "./tokens/breakpoints"
+import { layout } from "./tokens/layout"
+import { radius } from "./tokens/radius"
+import { shadows } from "./tokens/shadows"
+import { spacing } from "./tokens/spacing"
+import { typography } from "./tokens/typography"
+import { zIndex } from "./tokens/zIndex"
 
-export const customTheme: ThemeType = {
+export const customTheme = {
 
-    colors: {
-        background: "#020617",
-        surface: "#0f172a",
-        primary: "#a855f7",
-        secondary: "#14b8a6",
-        success: "#22c55e",
-        warning: "#eab308",
-        danger: "#ef4444",
-        text: "#e2e8f0",
-        textMuted: "#94a3b8",
-        border: "#1e293b"
-    },
+  mode: "customTheme",
 
-    typography: {
-        fontFamily: "Poppins, sans-serif",
-        fontSize: {
-            xs: "12px",
-            sm: "14px",
-            md: "16px",
-            lg: "20px",
-            xl: "24px",
-            xxl: "32px"
-        },
-        fontWeight: {
-            light: 300,
-            normal: 400,
-            medium: 500,
-            bold: 700
-        }
-    },
+  colors: {
+    background: "#222222",
+    surface: "#1f2937",
 
-    spacing: {
-        xs: "4px",
-        sm: "8px",
-        md: "16px",
-        lg: "24px",
-        xl: "32px"
-    },
+    border: "#334155",
 
-    radius: {
-        sm: "6px",
-        md: "10px",
-        lg: "16px",
-        xl: "24px"
-    },
+    text: "#f8fafc",
+    textMuted: "#94a3b8",
 
-    shadows: {
-        sm: "0 0 6px rgba(168,85,247,0.3)",
-        md: "0 0 12px rgba(168,85,247,0.4)",
-        lg: "0 0 20px rgba(168,85,247,0.5)"
-    }
+    primary: "#2563eb",
+    secondary: "#38bdf8",
+
+    success: "#22c55e",
+    warning: "#f59e0b",
+    danger: "#ef4444"
+  },
+
+  spacing,
+  radius,
+  shadows,
+  typography,
+  breakpoints,
+  zIndex,
+  layout
 
 }

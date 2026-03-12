@@ -8,7 +8,7 @@ const ThemeContext = createContext<any>(null)
 
 export function ThemeProvider({ children }: any) {
 
-    const [theme, setTheme] = useState(lightTheme)
+    const [theme, setTheme] = useState(customTheme)
 
     return (
 

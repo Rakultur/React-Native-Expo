@@ -15,41 +15,48 @@ export type ThemeType = {
 
     typography: {
         fontFamily: string
+
         fontSize: {
-            xs: string
-            sm: string
-            md: string
-            lg: string
-            xl: string
-            xxl: string
+            xs: number
+            sm: number
+            md: number
+            lg: number
+            xl: number
+            xxl: number
         }
+
         fontWeight: {
-            light: number
-            normal: number
-            medium: number
-            bold: number
+            light: string
+            normal: string
+            medium: string
+            bold: string
         }
     }
 
     spacing: {
-        xs: string
-        sm: string
-        md: string
-        lg: string
-        xl: string
+        xs: number
+        sm: number
+        md: number
+        lg: number
+        xl: number
     }
 
     radius: {
-        sm: string
-        md: string
-        lg: string
-        xl: string
+        sm: number
+        md: number
+        lg: number
+        xl: number
     }
 
     shadows: {
-        sm: string
-        md: string
-        lg: string
+        sm: any
+        md: any
+        lg: any
+    }
+
+    layout: {
+        containerWidth: number
+        componentHeight: number
     }
 
 }

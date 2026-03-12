@@ -1,86 +1,43 @@
-import React from "react"
-import { ScrollView, Text, View } from "react-native"
+import { useTheme } from "@/themes/ThemeProvider";
+import React from "react";
+import { ScrollView, Text, View } from "react-native";
+import { loadComponents } from "../../utils/loadComponents";
+import { createGalleryStyles } from "./styles";
 
-import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher"
-import { useTheme } from "@/themes/ThemeProvider"
-import { loadComponents } from "../../utils/loadComponents"
-
-const components = loadComponents()
+const components = loadComponents();
 
 export default function Gallery() {
+    const { theme } = useTheme();
 
-    const { theme } = useTheme()
+    const styles = createGalleryStyles(theme);
 
     return (
-
         <ScrollView
-            style={{
-                flex: 1,
-                backgroundColor: theme.colors.background
-            }}
-            contentContainerStyle={{
-                padding: theme.spacing.lg
-            }}
+            style={styles.scrollContainer}
+            contentContainerStyle={{ paddingBottom: theme.spacing.xl }}
         >
-
-            <ThemeSwitcher />
-
-            {/* Gallery Grid */}
-
-            <View
-                style={{
-                    flexDirection: "row",
-                    flexWrap: "wrap",
-                    gap: Number(theme.spacing.md.replace("px", ""))
-                }}
-            >
-
+            <View style={styles.container}>
                 {components.map((item, index) => {
-
-                    const Component = item.component
+                    const Component = item.component;
 
                     return (
+                        <View key={index} style={styles.cardContainer}>
+                            <Text style={styles.cardTitle}>{item.name}</Text>
 
-                        <View
-                            key={index}
-                            style={{
-                                width: 220,
-                                padding: Number(theme.spacing.md.replace("px", "")),
-                                borderWidth: 1,
-                                borderColor: theme.colors.border,
-                                borderRadius: Number(theme.radius.md.replace("px", "")),
-                                backgroundColor: theme.colors.surface,
-                                shadowColor: "#000",
-                                shadowOpacity: 0.1,
-                                shadowRadius: 6,
-                                elevation: 3
-                            }}
-                        >
-
-                            <Text
-                                style={{
-                                    fontWeight: "700",
-                                    marginBottom: Number(theme.spacing.sm.replace("px", "")),
-                                    color: theme.colors.text,
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontSize: 16
-                                }}
+                            <ScrollView
+                                horizontal
+                                showsHorizontalScrollIndicator={false}
+                                style={styles.horizontalScroll}
+                                contentContainerStyle={styles.horizontalContent}
                             >
-                                {item.name}
-                            </Text>
-
-                            <Component />
-
+                                <View style={styles.componentsContainer}>
+                                    <Component />
+                                </View>
+                            </ScrollView>
                         </View>
-
-                    )
-
+                    );
                 })}
-
             </View>
-
         </ScrollView>
-
-    )
-
+    );
 }
