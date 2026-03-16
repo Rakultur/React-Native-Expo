@@ -1,17 +1,10 @@
-import { Stack } from "expo-router"
-import React from "react"
-import { ThemeProvider } from "../themes/ThemeProvider"
+import { Slot } from "expo-router";
+import { ThemeProvider } from "../themes/ThemeProvider";
 
 export default function RootLayout() {
-
-    return (
-
-        <ThemeProvider>
-
-            <Stack />
-
-        </ThemeProvider>
-
-    )
-
+  return (
+    <ThemeProvider>
+      <Slot />
+    </ThemeProvider>
+  );
 }
