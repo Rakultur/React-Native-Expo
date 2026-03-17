@@ -1,55 +1,49 @@
-import React from "react"
-import { Pressable, Text, View } from "react-native"
-import { useTheme } from "../../../themes/ThemeProvider"
+import React from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { useTheme } from "../../../themes/ThemeProvider";
+import { createStyles } from "./style";
 
-export default function ThemeSwitcher() {
-
-    const { setTheme, lightTheme, darkTheme, customTheme } = useTheme()
+export function ThemeSwitcher() {
+    const { setTheme, themes, theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
-
-        <View
-            style={{
-                flexDirection: "row",
-                gap: 10,
-                marginBottom: 20
-            }}
-        >
-
-            <Pressable
-                onPress={() => setTheme(lightTheme)}
-                style={{
-                    padding: 10,
-                    backgroundColor: "#e5e7eb",
-                    borderRadius: 8
-                }}
+        <View style={styles.container}>
+            <TouchableOpacity
+                onPress={() => setTheme(themes.light)}
+                style={[
+                    styles.button,
+                    theme === themes.light
+                        ? styles.buttonActive
+                        : styles.buttonInactive,
+                ]}
             >
-                <Text>Light</Text>
-            </Pressable>
+                <Text style={styles.text}>Light</Text>
+            </TouchableOpacity>
 
-            <Pressable
-                onPress={() => setTheme(darkTheme)}
-                style={{
-                    padding: 10,
-                    backgroundColor: "#111827"
-                }}
+            <TouchableOpacity
+                onPress={() => setTheme(themes.dark)}
+                style={[
+                    styles.button,
+                    theme === themes.dark
+                        ? styles.buttonActive
+                        : styles.buttonInactive,
+                ]}
             >
-                <Text style={{ color: "#fff" }}>Dark</Text>
-            </Pressable>
+                <Text style={styles.text}>Dark</Text>
+            </TouchableOpacity>
 
-            <Pressable
-                onPress={() => setTheme(customTheme)}
-                style={{
-                    padding: 10,
-                    backgroundColor: "#f59e0b",
-                    borderRadius: 8
-                }}
+            <TouchableOpacity
+                onPress={() => setTheme(themes.custom)}
+                style={[
+                    styles.button,
+                    theme === themes.custom
+                        ? styles.buttonActive
+                        : styles.buttonInactive,
+                ]}
             >
-                <Text>Custom</Text>
-            </Pressable>
-
+                <Text style={styles.text}>Custom</Text>
+            </TouchableOpacity>
         </View>
-
-    )
-
+    );
 }

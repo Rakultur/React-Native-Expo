@@ -1,40 +1,49 @@
 import { StyleSheet } from "react-native";
+import { Theme } from "../../themes/types";
 
-export const styles = StyleSheet.create({
-  sidebar: {
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#38389d",
-  },
+export const createStyles = (theme: Theme, isMobile: boolean) =>
+  StyleSheet.create({
+    sidebar: {
+      position: isMobile ? "absolute" : "relative",
 
-  logo: {
-    color: "white",
-    fontSize: 22,
-    fontWeight: "700",
-    marginBottom: 40,
-  },
+      bottom: isMobile ? 0 : undefined,
+      left: 0,
 
-  item: {
-    paddingVertical: 12,
-    marginBottom: 8,
-  },
+      width: isMobile ? "100%" : 150,
+      height: isMobile ? 70 : "100%",
 
-  itemActive: {
-    paddingVertical: 12,
-    marginBottom: 8,
-    backgroundColor: "#343454",
-    borderRadius: 8,
-    paddingHorizontal: 12,
-  },
+      flexDirection: isMobile ? "row" : "column",
 
-  text: {
-    color: "#b8b8d4",
-    fontSize: 16,
-  },
+      justifyContent: "space-around",
+      alignItems: "center",
 
-  textActive: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "600",
-  },
-});
+      backgroundColor: theme.colors.background,
+      borderTopWidth: isMobile ? 1 : 0,
+      borderColor: "#ccc",
+    },
+
+    itemsContainer: {
+      flexDirection: isMobile ? "row" : "column",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 20,
+    },
+
+    link: {
+      padding: 10,
+      borderRadius: 10,
+    },
+
+    activeItem: {
+      backgroundColor: theme.colors.primary,
+      borderRadius: 12,
+      padding: 10,
+    },
+
+    title: {
+      display: isMobile ? "none" : "flex",
+      color: theme.colors.text,
+      fontSize: 22,
+      marginBottom: 20,
+    },
+  });

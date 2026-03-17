@@ -1,40 +1,69 @@
-import { Link, usePathname, type Href } from "expo-router";
-import { Text, View } from "react-native";
-import { styles } from "./style";
+import { Link, usePathname } from "expo-router";
+import { House, MonitorCog, UserPen } from "lucide-react";
+import { Text, View, useWindowDimensions } from "react-native";
+import { useTheme } from "../../themes/ThemeProvider";
+import { ThemeSwitcher } from "../ui/ThemeSwitcher/ThemeSwitcher";
+import { createStyles } from "./style";
 
-type MenuItem = {
-  label: string;
-  href: Href;
-};
 
 export default function NavigationBar() {
   const pathname = usePathname();
+  const { theme } = useTheme();
 
-  const menu: MenuItem[] = [
-    { label: "Home", href: "/" },
-    { label: "Profile", href: "/profile" },
-    { label: "Settings", href: "/settings" },
-  ];
+  const { width } = useWindowDimensions();
+  const isMobile = width < 768;
+
+  const styles = createStyles(theme, isMobile);
+
+  const isActive = (href: string) => pathname === href;
 
   return (
     <View style={styles.sidebar}>
-      <Text style={styles.logo}>MyApp</Text>
+      {!isMobile && <Text style={styles.title}>MyApp</Text>}
 
-      {menu.map((item) => {
-        const active = pathname === item.href;
-
-        return (
-          <Link
-            key={item.label}
-            href={item.href}
-            style={active ? styles.itemActive : styles.item}
-          >
-            <Text style={active ? styles.textActive : styles.text}>
-              {item.label}
-            </Text>
+      <View style={styles.itemsContainer}>
+        <View style={isActive("/") ? styles.activeItem : undefined}>
+          <Link href="/">
+            <House
+              color={
+                isActive("/")
+                  ? theme.colors.background
+                  : theme.colors.text
+              }
+              size={28}
+            />
           </Link>
-        );
-      })}
+        </View>
+
+        <View style={isActive("/profile") ? styles.activeItem : undefined}>
+          <Link href="/profile">
+            <UserPen
+              color={
+                isActive("/profile")
+                  ? theme.colors.background
+                  : theme.colors.text
+              }
+              size={28}
+            />
+          </Link>
+        </View>
+
+        <View style={isActive("/settings") ? styles.activeItem : undefined}>
+          <Link href="/settings">
+            <MonitorCog
+              color={
+                isActive("/settings")
+                  ? theme.colors.background
+                  : theme.colors.text
+              }
+              size={28}
+            />
+          </Link>
+        </View>
+
+        {/* Solo mostrar switch en desktop o ponerlo como icono */}
+        {!isMobile && <ThemeSwitcher />}
+      </View>
     </View>
   );
 }

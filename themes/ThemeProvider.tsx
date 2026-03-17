@@ -1,22 +1,34 @@
 import React, { createContext, useContext, useState } from "react";
-
 import { customTheme } from "./custom";
 import { darkTheme } from "./dark";
 import { lightTheme } from "./light";
+import { Theme } from "./types";
 
-const ThemeContext = createContext<any>(null);
+type ThemeContextType = {
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
+  themes: {
+    light: Theme;
+    dark: Theme;
+    custom: Theme;
+  };
+};
 
-export function ThemeProvider({ children }: any) {
-  const [theme, setTheme] = useState(lightTheme);
+const ThemeContext = createContext<ThemeContextType | null>(null);
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setTheme] = useState<Theme>(lightTheme);
 
   return (
     <ThemeContext.Provider
       value={{
         theme,
         setTheme,
-        lightTheme,
-        darkTheme,
-        customTheme,
+        themes: {
+          light: lightTheme,
+          dark: darkTheme,
+          custom: customTheme,
+        },
       }}
     >
       {children}
