@@ -1,17 +1,45 @@
-import React from "react"
-import { Text, View } from "react-native"
-import { useTheme } from "../../../themes/ThemeProvider"
-import { createStyles } from "./styles"
+import { useMemo, useState } from "react";
+import {
+    Text,
+    TextInput,
+    View
+} from "react-native";
+import { useTheme } from "../../../themes/ThemeProvider";
+import { createStyles } from "./styles";
+import { InputProps } from "./types";
 
-export default function Input(){
+export function Input({
+    label,
+    error,
+    disabled = false,
+    ...props
+}: InputProps) {
+    const { theme } = useTheme();
 
- const {theme} = useTheme()
- const styles = createStyles(theme)
+    const [isFocused, setIsFocused] = useState(false);
 
- return(
-  <View style={styles.container}>
-   <Text>Input component</Text>
-  </View>
- )
+    const styles = useMemo(
+        () => createStyles(theme, isFocused, !!error, disabled),
+        [theme, isFocused, error, disabled]
+    );
 
+    return (
+        <View style={styles.container}>
+            {/* LABEL */}
+            {label && <Text style={styles.label}>{label}</Text>}
+
+            {/* INPUT */}
+            <TextInput
+                {...props}
+                editable={!disabled}
+                style={styles.input}
+                placeholderTextColor={theme.colors.textMuted}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+            />
+
+            {/* ERROR */}
+            {error && <Text style={styles.error}>{error}</Text>}
+        </View>
+    );
 }

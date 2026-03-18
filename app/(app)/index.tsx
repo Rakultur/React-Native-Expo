@@ -1,26 +1,34 @@
-import { ScrollView, Text, View } from "react-native";
+import { useEffect, useState } from "react";
+import { FlatList, Text, View } from "react-native";
 import { useTheme } from "../../themes/ThemeProvider";
 import { createStyles } from "./styles";
 
-export default function Home() {
+export default function InicioScreen() {
   const { theme } = useTheme();
   const styles = createStyles(theme);
+  const [matches, setMatches] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch("https://www.scorebat.com/video-api/")
+      .then(res => res.json())
+      .then(setMatches)
+      .catch(console.error);
+  }, []);
 
   return (
-    <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
-      <View style={styles.content}>
-        <Text style={styles.title}>Home</Text>
-        <Text style={styles.subtitle}>
-          Bienvenido a tu app con soporte de temas
-        </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Partidos recientes</Text>
 
-        {/* Card de ejemplo */}
-        <View style={styles.card}>
-          <Text style={styles.cardText}>
-            Este componente responde al tema activo
-          </Text>
-        </View>
-      </View>
-    </ScrollView>
+      <FlatList
+        data={matches}
+        keyExtractor={(item, i) => i.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.card}>
+            <Text style={styles.match}>{item.title}</Text>
+            <Text style={styles.league}>{item.competition}</Text>
+          </View>
+        )}
+      />
+    </View>
   );
 }

@@ -3,47 +3,49 @@ import { Theme } from "../../themes/types";
 
 export const createStyles = (theme: Theme, isMobile: boolean) =>
   StyleSheet.create({
-    sidebar: {
-      position: isMobile ? "absolute" : "relative",
+    container: {
+      backgroundColor: theme.colors.secondary,
 
+      // 🔥 Responsive layout
+      flexDirection: isMobile ? "row" : "column",
+
+      // Desktop sidebar
+      width: isMobile ? "100%" : 80,
+      height: isMobile ? 70 : "100%",
+
+      position: isMobile ? "absolute" : "relative",
       bottom: isMobile ? 0 : undefined,
       left: 0,
 
-      width: isMobile ? "100%" : 150,
-      height: isMobile ? 70 : "100%",
-
-      flexDirection: isMobile ? "row" : "column",
-
-      justifyContent: "space-around",
-      alignItems: "center",
-
-      backgroundColor: theme.colors.secondary,
       borderTopWidth: isMobile ? 1 : 0,
-      borderColor: "#ccc",
-    },
+      borderRightWidth: isMobile ? 0 : 1,
 
-    itemsContainer: {
-      flexDirection: isMobile ? "row" : "column",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: 20,
-    },
-
-    link: {
-      padding: 10,
-      borderRadius: 10,
-    },
-
-    activeItem: {
-      backgroundColor: theme.colors.secondaryForeground,
-      borderRadius: 12,
-      padding: 10,
+      borderColor: theme.colors.border,
+      zIndex: theme.zIndex.base,
     },
 
     title: {
-      display: isMobile ? "none" : "flex",
-      color: theme.colors.secondaryForeground,
-      fontSize: 22,
-      marginBottom: 20,
+      color: theme.colors.text,
+      fontSize: theme.typography.fontSize.lg,
+      textAlign: "center",
+      marginVertical: theme.spacingValues.md,
+    },
+
+    itemsContainer: {
+      flex: 1,
+      flexDirection: isMobile ? "row" : "column",
+      justifyContent: "space-around",
+      alignItems: "center",
+    },
+
+    item: {
+      padding: theme.spacingValues.sm,
+      borderRadius: theme.borderRadius.md,
+    },
+
+    activeItem: {
+      padding: theme.spacingValues.sm,
+      borderRadius: theme.borderRadius.md,
+      backgroundColor: theme.colors.primary,
     },
   });

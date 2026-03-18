@@ -9,6 +9,7 @@ export function ThemeSwitcher() {
 
     return (
         <View style={styles.container}>
+
             <TouchableOpacity
                 onPress={() => setTheme(themes.light)}
                 style={[

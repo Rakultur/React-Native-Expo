@@ -209,8 +209,10 @@ export type Theme = {
     // =========================
     layout: {
         container: {
+            flexDirection: string,
             padding: number;
             maxWidth: number;
+
         };
     };
 
