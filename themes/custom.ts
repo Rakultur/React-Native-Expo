@@ -7,52 +7,87 @@ export const customTheme: Theme = {
     // =========================
     colors: {
         // Base
-        background: "#F1F6F9", // El blanco pálido/azul hielo como fondo principal, da una sensación de amplitud y calma.
-        foreground: "#2D3748", // El azul marino oscuro como texto principal, para un alto contraste sobre el fondo claro.
+        background: "#F1F6F9",
+        foreground: "#2D3748",
 
-        // Brand / Primary (Usaremos el azul grisáceo medio como color principal)
-        primary: "#4A5568", // El azul grisáceo medio como color primario.
-        primaryForeground: "#FFFFFF", // Texto blanco sobre el color primario.
+        // Essential
+        white: "#FFFFFF",
+        black: "#000000",
 
-        // Secondary (Usaremos el gris azulado claro)
-        secondary: "#A0AEC0", // El gris azulado claro como color secundario.
-        secondaryForeground: "#2D3748", // Texto oscuro sobre el color secundario.
+        // Brand
+        primary: "#4A5568",
+        primaryForeground: "#FFFFFF",
+
+        secondary: "#A0AEC0",
+        secondaryForeground: "#2D3748",
+
+        // System colors (ajustados al tono frío/desaturado)
+        blue: "#4299E1",
+        blueForeground: "#FFFFFF",
+
+        green: "#38A169",
+        greenForeground: "#FFFFFF",
+
+        red: "#E53E3E",
+        redForeground: "#FFFFFF",
+
+        yellow: "#D69E2E",
+        yellowForeground: "#2D3748",
+
+        // Complementarios suaves (útiles sin romper estética)
+        purple: "#805AD5",
+        purpleForeground: "#FFFFFF",
+
+        cyan: "#319795",
+        cyanForeground: "#FFFFFF",
 
         // UI surfaces
-        card: "#FFFFFF", // Tarjetas blancas para mantener la limpieza.
-        cardForeground: "#2D3748", // Texto oscuro en las tarjetas.
+        card: "#FFFFFF",
+        cardForeground: "#2D3748",
 
-        // Borders & Dividers
-        border: "#A0AEC0", // El color secundario (gris azulado claro) para bordes, para una integración suave.
-        divider: "#E2E8F0", // Un gris muy pálido para divisores. (Interpolado).
+        // Borders
+        border: "#A0AEC0",
+        divider: "#E2E8F0",
 
         // States
-        success: "#38A169", // Un verde limpio y brillante.
-        warning: "#D69E2E", // Un amarillo/naranja cálido para advertencias.
-        error: "#E53E3E",   // Un rojo directo y claro.
-        info: "#4299E1",    // Un azul más vibrante para información.
+        success: "#38A169",
+        warning: "#D69E2E",
+        error: "#E53E3E",
+        info: "#4299E1",
 
-        // Text hierarchy
-        text: "#2D3748", // El azul marino oscuro principal.
-        textSecondary: "#4A5568", // Usamos el color primario (azul grisáceo medio) para texto secundario.
-        textMuted: "#718096", // Un gris azulado apagado para texto atenuado. (Interpolado).
-        textDisabled: "#A0AEC0", // El color secundario (gris azulado claro) para texto deshabilitado.
+        // Extended neutrals (slate scale — MUY importante aquí)
+        gray50: "#F7FAFC",
+        gray100: "#EDF2F7",
+        gray200: "#E2E8F0",
+        gray300: "#CBD5E0",
+        gray400: "#A0AEC0",
+        gray500: "#718096",
+        gray600: "#4A5568",
+        gray700: "#2D3748",
+        gray800: "#1A202C",
+        gray900: "#171923",
+
+        // Text
+        text: "#2D3748",
+        textSecondary: "#4A5568",
+        textMuted: "#718096",
+        textDisabled: "#A0AEC0",
 
         // Inputs
-        inputBackground: "#FFFFFF", // Fondo blanco para inputs.
-        inputBorder: "#4A5568", // Borde con el color primario (azul grisáceo medio) para destacar.
-        inputPlaceholder: "#718096", // Color de placeholder en un gris azulado apagado.
+        inputBackground: "#FFFFFF",
+        inputBorder: "#4A5568",
+        inputPlaceholder: "#718096",
 
-        // Interaction layers (REEMPLAZA overlays sueltos)
+        // Interaction
         interaction: {
-            hover: "rgba(74, 85, 104, 0.08)", // Hover con el color primario y baja opacidad.
-            focus: "rgba(74, 85, 104, 0.16)", // Focus con más opacidad del color primario.
-            pressed: "rgba(74, 85, 104, 0.24)", // Pressed con aún más opacidad del color primario.
+            hover: "rgba(74, 85, 104, 0.08)",
+            focus: "rgba(74, 85, 104, 0.16)",
+            pressed: "rgba(74, 85, 104, 0.24)",
         },
 
         // Disabled
-        backgroundDisabled: "#E2E8F0", // Fondo gris muy pálido para elementos deshabilitados. (Interpolado).
-        foregroundDisabled: "#A0AEC0", // Texto gris azulado claro para elementos deshabilitados.
+        backgroundDisabled: "#E2E8F0",
+        foregroundDisabled: "#A0AEC0",
     },
 
     // =========================

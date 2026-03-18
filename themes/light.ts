@@ -6,52 +6,80 @@ export const lightTheme: Theme = {
     // =========================
     colors: {
         // Base
-        background: "#F3F4F4", // El blanco muy pálido como fondo principal, da amplitud y limpieza.
-        foreground: "#1F2937", // El gris muy oscuro como texto principal, para un alto contraste sobre el fondo claro.
+        background: "#F3F4F4",
+        foreground: "#1F2937",
 
-        // Brand / Primary (Usaremos el frambuesa/magenta como color principal)
-        primary: "#A8557A", // El tono frambuesa/magenta profundo como color primario.
-        primaryForeground: "#FFFFFF", // Texto blanco sobre el color primario.
+        // Essential
+        white: "#FFFFFF",
+        black: "#000000",
 
-        // Secondary (Usaremos el borgoña/púrpura oscuro)
-        secondary: "#6B2136", // El borgoña/púrpura oscuro como color secundario.
-        secondaryForeground: "#FFFFFF", // Texto blanco sobre el color secundario.
+        // Brand
+        primary: "#A8557A",
+        primaryForeground: "#FFFFFF",
+
+        secondary: "#6B2136",
+        secondaryForeground: "#FFFFFF",
+
+        // Primary system colors (ajustados a tu tono)
+        blue: "#3B82F6",         // Azul moderno (no muy frío)
+        blueForeground: "#FFFFFF",
+
+        red: "#DC2626",          // Rojo ligeramente más profundo que el error
+        redForeground: "#FFFFFF",
+
+        yellow: "#FBBF24",       // Amarillo cálido (menos chillón)
+        yellowForeground: "#1F2937",
+
+        green: "#22C55E",        // Verde natural (alineado con success)
+        greenForeground: "#FFFFFF",
 
         // UI surfaces
-        card: "#FFFFFF", // Tarjetas blancas para mantener la limpieza y el contraste.
-        cardForeground: "#1F2937", // Texto oscuro en las tarjetas.
+        card: "#FFFFFF",
+        cardForeground: "#1F2937",
 
-        // Borders & Dividers
-        border: "#E5E7EB", // Un gris muy pálido para bordes, para que sean sutiles. (Interpolado).
-        divider: "#D1D5DB", // Un gris un poco más oscuro para divisores. (Interpolado).
+        // Borders
+        border: "#E5E7EB",
+        divider: "#D1D5DB",
 
         // States
-        success: "#10B981", // Un verde limpio y brillante.
-        warning: "#F59E0B", // Un naranja/ámbar cálido para advertencias.
-        error: "#EF4444",   // Un rojo directo y claro.
-        info: "#007AFF",    // Un azul clásico y limpio para información. (Podríamos considerar usar primary si queremos más calidez).
+        success: "#10B981",
+        warning: "#F59E0B",
+        error: "#EF4444",
+        info: "#007AFF",
 
-        // Text hierarchy
-        text: "#1F2937", // El gris muy oscuro principal.
-        textSecondary: "#6B2136", // Usamos el color secundario (borgoña) para texto secundario, dándole carácter.
-        textMuted: "#9CA3AF", // Un gris neutro para texto atenuado. (Interpolado).
-        textDisabled: "#A0A0A0", // Un gris más claro para texto deshabilitado. (Interpolado).
+        // Extended neutrals (MUY útiles en UI compleja)
+        gray50: "#F9FAFB",
+        gray100: "#F3F4F6",
+        gray200: "#E5E7EB",
+        gray300: "#D1D5DB",
+        gray400: "#9CA3AF",
+        gray500: "#6B7280",
+        gray600: "#4B5563",
+        gray700: "#374151",
+        gray800: "#1F2937",
+        gray900: "#111827",
+
+        // Text
+        text: "#1F2937",
+        textSecondary: "#6B2136",
+        textMuted: "#9CA3AF",
+        textDisabled: "#A0A0A0",
 
         // Inputs
-        inputBackground: "#FFFFFF", // Fondo blanco para inputs.
-        inputBorder: "#A8557A", // Borde con el color primario (frambuesa) para destacar.
-        inputPlaceholder: "#9CA3AF", // Color de placeholder en un gris neutro.
+        inputBackground: "#FFFFFF",
+        inputBorder: "#A8557A",
+        inputPlaceholder: "#9CA3AF",
 
-        // Interaction layers (REEMPLAZA overlays sueltos)
+        // Interaction
         interaction: {
-            hover: "rgba(168, 85, 122, 0.08)", // Hover con el color primario y baja opacidad.
-            focus: "rgba(168, 85, 122, 0.16)", // Focus con más opacidad del color primario.
-            pressed: "rgba(168, 85, 122, 0.24)", // Pressed con aún más opacidad del color primario.
+            hover: "rgba(168, 85, 122, 0.08)",
+            focus: "rgba(168, 85, 122, 0.16)",
+            pressed: "rgba(168, 85, 122, 0.24)",
         },
 
         // Disabled
-        backgroundDisabled: "#F3F4F4", // Fondo claro para elementos deshabilitados, pero con texto atenuado.
-        foregroundDisabled: "#9CA3AF", // Texto en gris neutro para elementos deshabilitados.
+        backgroundDisabled: "#F3F4F4",
+        foregroundDisabled: "#9CA3AF",
     },
 
     // =========================

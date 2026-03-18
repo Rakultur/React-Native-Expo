@@ -27,8 +27,8 @@ export default function NavigationBar() {
             <House
               color={
                 isActive("/")
-                  ? theme.colors.background
-                  : theme.colors.text
+                  ? theme.colors.secondary
+                  : theme.colors.secondaryForeground
               }
               size={28}
             />
@@ -40,8 +40,8 @@ export default function NavigationBar() {
             <UserPen
               color={
                 isActive("/profile")
-                  ? theme.colors.background
-                  : theme.colors.text
+                  ? theme.colors.secondary
+                  : theme.colors.secondaryForeground
               }
               size={28}
             />
@@ -53,8 +53,8 @@ export default function NavigationBar() {
             <MonitorCog
               color={
                 isActive("/settings")
-                  ? theme.colors.background
-                  : theme.colors.text
+                  ? theme.colors.secondary
+                  : theme.colors.secondaryForeground
               }
               size={28}
             />

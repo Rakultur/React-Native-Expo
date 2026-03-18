@@ -3,41 +3,85 @@ export type Theme = {
     // COLORS
     // =========================
     colors: {
+        // Base
         background: string;
         foreground: string;
 
+        // Essentials
+        white: string;
+        black: string;
+
+        // Brand
         primary: string;
         primaryForeground: string;
 
         secondary: string;
         secondaryForeground: string;
 
+        // System colors
+        blue: string;
+        blueForeground: string;
+
+        green: string;
+        greenForeground: string;
+
+        red: string;
+        redForeground: string;
+
+        yellow: string;
+        yellowForeground: string;
+
+        purple?: string;
+        purpleForeground?: string;
+
+        cyan?: string;
+        cyanForeground?: string;
+
+        // UI
         card: string;
         cardForeground: string;
 
+        // Borders
         border: string;
         divider: string;
 
+        // States
         success: string;
         warning: string;
         error: string;
         info: string;
 
+        // Neutral scale
+        gray50: string;
+        gray100: string;
+        gray200: string;
+        gray300: string;
+        gray400: string;
+        gray500: string;
+        gray600: string;
+        gray700: string;
+        gray800: string;
+        gray900: string;
+
+        // Text
         text: string;
         textSecondary: string;
         textMuted: string;
         textDisabled: string;
 
+        // Inputs
         inputBackground: string;
         inputBorder: string;
         inputPlaceholder: string;
 
+        // Interaction
         interaction: {
             hover: string;
             focus: string;
             pressed: string;
         };
 
+        // Disabled
         backgroundDisabled: string;
         foregroundDisabled: string;
     };

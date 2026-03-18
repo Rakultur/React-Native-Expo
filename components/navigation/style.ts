@@ -17,7 +17,7 @@ export const createStyles = (theme: Theme, isMobile: boolean) =>
       justifyContent: "space-around",
       alignItems: "center",
 
-      backgroundColor: theme.colors.background,
+      backgroundColor: theme.colors.secondary,
       borderTopWidth: isMobile ? 1 : 0,
       borderColor: "#ccc",
     },
@@ -35,14 +35,14 @@ export const createStyles = (theme: Theme, isMobile: boolean) =>
     },
 
     activeItem: {
-      backgroundColor: theme.colors.primary,
+      backgroundColor: theme.colors.secondaryForeground,
       borderRadius: 12,
       padding: 10,
     },
 
     title: {
       display: isMobile ? "none" : "flex",
-      color: theme.colors.text,
+      color: theme.colors.secondaryForeground,
       fontSize: 22,
       marginBottom: 20,
     },
