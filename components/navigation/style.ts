@@ -3,13 +3,12 @@ import { Theme } from "../../themes/types";
 
 export const createStyles = (theme: Theme, isMobile: boolean) =>
   StyleSheet.create({
-    container: {
-      backgroundColor: theme.colors.secondary,
+    // Container principal de la barra de navegación
+    /*container: {
+      backgroundColor: theme.colors.primary,
 
-      // 🔥 Responsive layout
       flexDirection: isMobile ? "row" : "column",
 
-      // Desktop sidebar
       width: isMobile ? "100%" : 80,
       height: isMobile ? 70 : "100%",
 
@@ -22,6 +21,13 @@ export const createStyles = (theme: Theme, isMobile: boolean) =>
 
       borderColor: theme.colors.border,
       zIndex: theme.zIndex.base,
+    }, */
+
+    Container: {
+      width: 150,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: theme.colors.primary,
     },
 
     title: {
@@ -31,11 +37,8 @@ export const createStyles = (theme: Theme, isMobile: boolean) =>
       marginVertical: theme.spacingValues.md,
     },
 
-    itemsContainer: {
+    ContainerMenu: {
       flex: 1,
-      flexDirection: isMobile ? "row" : "column",
-      justifyContent: "space-around",
-      alignItems: "center",
     },
 
     item: {
