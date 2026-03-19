@@ -3,22 +3,18 @@ import { Theme } from "./types";
 export const darkTheme: Theme = {
   // COLORS
   colors: {
-    // Base
     background: "#222222",
     foreground: "#2D3748",
 
-    // Essential
     white: "#FFFFFF",
     black: "#000000",
 
-    // Brand
     primary: "#1A1A1A",
     primaryForeground: "#FFFFFF",
 
     secondary: "#222222",
     secondaryForeground: "#2D3748",
 
-    // System colors (ajustados al tono frío/desaturado)
     blue: "#4299E1",
     blueForeground: "#FFFFFF",
 
@@ -31,18 +27,16 @@ export const darkTheme: Theme = {
     yellow: "#D69E2E",
     yellowForeground: "#2D3748",
 
-    // Complementarios suaves (útiles sin romper estética)
     purple: "#805AD5",
     purpleForeground: "#FFFFFF",
 
     cyan: "#319795",
     cyanForeground: "#FFFFFF",
 
-    // UI surfaces
+    // Card
     card: "#FFFFFF",
     cardForeground: "#2D3748",
 
-    // Borders
     border: "#A0AEC0",
     divider: "#E2E8F0",
 
@@ -52,7 +46,6 @@ export const darkTheme: Theme = {
     error: "#E53E3E",
     info: "#4299E1",
 
-    // Extended neutrals (slate scale — MUY importante aquí)
     gray50: "#F7FAFC",
     gray100: "#EDF2F7",
     gray200: "#E2E8F0",
@@ -87,9 +80,7 @@ export const darkTheme: Theme = {
     foregroundDisabled: "#A0AEC0",
   },
 
-  // =========================
   // OPACITY SYSTEM
-  // =========================
   opacity: {
     disabled: 0.5,
     hover: 0.8,
@@ -97,9 +88,7 @@ export const darkTheme: Theme = {
     focus: 0.7,
   },
 
-  // =========================
   // SPACING
-  // =========================
   spacing: (v: number) => v * 8,
 
   spacingValues: {
@@ -112,9 +101,7 @@ export const darkTheme: Theme = {
     xxl: 40,
   },
 
-  // =========================
   // BORDER RADIUS
-  // =========================
   borderRadius: {
     none: 0,
     sm: 4,
@@ -124,9 +111,7 @@ export const darkTheme: Theme = {
     full: 999,
   },
 
-  // =========================
   // BORDERS
-  // =========================
   borders: {
     width: {
       thin: 1,
@@ -134,9 +119,7 @@ export const darkTheme: Theme = {
     },
   },
 
-  // =========================
   // TYPOGRAPHY
-  // =========================
   typography: {
     fontFamily: {
       regular: "System",
@@ -175,9 +158,7 @@ export const darkTheme: Theme = {
     },
   },
 
-  // =========================
   // SHADOWS
-  // =========================
   shadows: {
     sm: {
       shadowColor: "#000",
@@ -199,9 +180,7 @@ export const darkTheme: Theme = {
     },
   },
 
-  // =========================
   // Z-INDEX
-  // =========================
   zIndex: {
     base: 0,
     dropdown: 10,
@@ -209,9 +188,7 @@ export const darkTheme: Theme = {
     toast: 1000,
   },
 
-  // =========================
-  // MOTION (mejor que transitions)
-  // =========================
+  // MOTION
   motion: {
     duration: {
       fast: 100,
@@ -220,9 +197,7 @@ export const darkTheme: Theme = {
     },
   },
 
-  // =========================
   // LAYOUT
-  // =========================
   layout: {
     container: {
       flexDirection: "column",
@@ -231,9 +206,7 @@ export const darkTheme: Theme = {
     },
   },
 
-  // =========================
   // COMPONENT TOKENS
-  // =========================
   components: {
     button: {
       height: 48,
@@ -263,9 +236,7 @@ export const darkTheme: Theme = {
     },
   },
 
-  // =========================
-  // VARIANTS (CLAVE PARA FRAMEWORK)
-  // =========================
+  // VARIANTS
   variants: {
     button: {
       primary: {
@@ -283,9 +254,7 @@ export const darkTheme: Theme = {
     },
   },
 
-  // =========================
   // SIZES
-  // =========================
   sizes: {
     icon: {
       sm: 16,
@@ -294,9 +263,7 @@ export const darkTheme: Theme = {
     },
   },
 
-  // =========================
   // ACCESSIBILITY
-  // =========================
   accessibility: {
     focusRing: {
       width: 2,

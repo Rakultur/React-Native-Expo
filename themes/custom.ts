@@ -1,97 +1,87 @@
 import { Theme } from "./types";
 
 export const customTheme: Theme = {
-  // =========================
   // COLORS
-  // =========================
   colors: {
-    // Base
-    background: "#ffffff",
-    foreground: "#000000",
+    background: "#f9f9fb",
+    foreground: "#2e3035",
 
-    // Essential
     white: "#FFFFFF",
     black: "#000000",
 
-    // Brand
-    primary: "#3498db",
+    primary: "#6366f1",
     primaryForeground: "#ffffff",
 
-    secondary: "#2ecc71",
+    secondary: "#10b981",
     secondaryForeground: "#ffffff",
 
-    // Primary system colors (alineados a estilo limpio)
-    blue: "#3498db",
+    blue: "#38bdf8",
     blueForeground: "#ffffff",
 
-    green: "#2ecc71",
-    greenForeground: "#ffffff",
+    green: "#84cc16",
+    greenForeground: "#000000",
 
-    red: "#e74c3c",
+    red: "#f43f5e",
     redForeground: "#ffffff",
 
-    yellow: "#f1c40f",
+    yellow: "#facc15",
     yellowForeground: "#000000",
 
-    // Extra complementario útil (para UI más rica)
-    purple: "#9b59b6",
+    purple: "#a855f7",
     purpleForeground: "#ffffff",
 
-    cyan: "#1abc9c",
-    cyanForeground: "#ffffff",
+    cyan: "#2dd4bf",
+    cyanForeground: "#000000",
 
-    // UI surfaces
-    card: "#f5f5f5",
-    cardForeground: "#000000",
+    // Card
+    card: "#ffffff",
+    cardForeground: "#2e3035",
 
     // Borders
-    border: "#e0e0e0",
-    divider: "#eeeeee",
+    border: "#e5e7eb",
+    divider: "#f3f4f6",
 
     // States
-    success: "#2ecc71",
-    warning: "#f1c40f",
-    error: "#e74c3c",
-    info: "#3498db",
+    success: "#10b981",
+    warning: "#facc15",
+    error: "#f43f5e",
+    info: "#38bdf8",
 
-    // Extended neutrals (clave para escalabilidad)
-    gray50: "#fafafa",
-    gray100: "#f5f5f5",
-    gray200: "#eeeeee",
-    gray300: "#e0e0e0",
-    gray400: "#bdbdbd",
-    gray500: "#9e9e9e",
-    gray600: "#757575",
-    gray700: "#616161",
-    gray800: "#424242",
-    gray900: "#212121",
+    gray50: "#f9fafb",
+    gray100: "#f3f4f6",
+    gray200: "#e5e7eb",
+    gray300: "#d1d5db",
+    gray400: "#9ca3af",
+    gray500: "#6b7280",
+    gray600: "#4b5563",
+    gray700: "#374151",
+    gray800: "#1f2937",
+    gray900: "#111827",
 
     // Text
-    text: "#000000",
-    textSecondary: "#666666",
-    textMuted: "#999999",
-    textDisabled: "#cccccc",
+    text: "#2e3035",
+    textSecondary: "#6b7280",
+    textMuted: "#9ca3af",
+    textDisabled: "#d1d5db",
 
     // Inputs
-    inputBackground: "#ffffff",
-    inputBorder: "#cccccc",
-    inputPlaceholder: "#999999",
+    inputBackground: "#f9f9fb",
+    inputBorder: "#d1d5db",
+    inputPlaceholder: "#9ca3af",
 
-    // Interaction (ligeramente refinado para consistencia moderna)
+    // Interaction
     interaction: {
-      hover: "rgba(52, 152, 219, 0.08)", // usa primary en vez de negro
-      focus: "rgba(52, 152, 219, 0.16)",
-      pressed: "rgba(52, 152, 219, 0.24)",
+      hover: "rgba(100, 102, 241, 0.08)",
+      focus: "rgba(100, 102, 241, 0.16)",
+      pressed: "rgba(100, 102, 241, 0.24)",
     },
 
     // Disabled
-    backgroundDisabled: "#f0f0f0",
-    foregroundDisabled: "#a0a0a0",
+    backgroundDisabled: "#f3f4f6",
+    foregroundDisabled: "#9ca3af",
   },
 
-  // =========================
   // OPACITY SYSTEM
-  // =========================
   opacity: {
     disabled: 0.5,
     hover: 0.8,
@@ -99,9 +89,7 @@ export const customTheme: Theme = {
     focus: 0.7,
   },
 
-  // =========================
   // SPACING
-  // =========================
   spacing: (v: number) => v * 8,
 
   spacingValues: {
@@ -114,9 +102,7 @@ export const customTheme: Theme = {
     xxl: 40,
   },
 
-  // =========================
   // BORDER RADIUS
-  // =========================
   borderRadius: {
     none: 0,
     sm: 4,
@@ -126,9 +112,7 @@ export const customTheme: Theme = {
     full: 999,
   },
 
-  // =========================
   // BORDERS
-  // =========================
   borders: {
     width: {
       thin: 1,
@@ -136,9 +120,7 @@ export const customTheme: Theme = {
     },
   },
 
-  // =========================
   // TYPOGRAPHY
-  // =========================
   typography: {
     fontFamily: {
       regular: "System",
@@ -177,9 +159,7 @@ export const customTheme: Theme = {
     },
   },
 
-  // =========================
   // SHADOWS
-  // =========================
   shadows: {
     sm: {
       shadowColor: "#000",
@@ -201,9 +181,7 @@ export const customTheme: Theme = {
     },
   },
 
-  // =========================
   // Z-INDEX
-  // =========================
   zIndex: {
     base: 0,
     dropdown: 10,
@@ -211,9 +189,7 @@ export const customTheme: Theme = {
     toast: 1000,
   },
 
-  // =========================
   // MOTION (mejor que transitions)
-  // =========================
   motion: {
     duration: {
       fast: 100,
@@ -222,9 +198,7 @@ export const customTheme: Theme = {
     },
   },
 
-  // =========================
   // LAYOUT
-  // =========================
   layout: {
     container: {
       flexDirection: "column",
@@ -233,9 +207,7 @@ export const customTheme: Theme = {
     },
   },
 
-  // =========================
   // COMPONENT TOKENS
-  // =========================
   components: {
     button: {
       height: 48,
@@ -265,9 +237,7 @@ export const customTheme: Theme = {
     },
   },
 
-  // =========================
-  // VARIANTS (CLAVE PARA FRAMEWORK)
-  // =========================
+  // VARIANTS
   variants: {
     button: {
       primary: {
@@ -285,9 +255,7 @@ export const customTheme: Theme = {
     },
   },
 
-  // =========================
   // SIZES
-  // =========================
   sizes: {
     icon: {
       sm: 16,
@@ -296,9 +264,7 @@ export const customTheme: Theme = {
     },
   },
 
-  // =========================
   // ACCESSIBILITY
-  // =========================
   accessibility: {
     focusRing: {
       width: 2,

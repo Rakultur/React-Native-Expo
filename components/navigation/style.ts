@@ -3,52 +3,61 @@ import { Theme } from "../../themes/types";
 
 export const createStyles = (theme: Theme, isMobile: boolean) =>
   StyleSheet.create({
-    // Container principal de la barra de navegación
-    /*container: {
-      backgroundColor: theme.colors.primary,
-
-      flexDirection: isMobile ? "row" : "column",
-
-      width: isMobile ? "100%" : 80,
-      height: isMobile ? 70 : "100%",
-
-      position: isMobile ? "absolute" : "relative",
-      bottom: isMobile ? 0 : undefined,
-      left: 0,
-
-      borderTopWidth: isMobile ? 1 : 0,
-      borderRightWidth: isMobile ? 0 : 1,
-
-      borderColor: theme.colors.border,
-      zIndex: theme.zIndex.base,
-    }, */
-
     Container: {
-      width: 150,
-      justifyContent: "center",
+      backgroundColor: theme.colors.background,
+      width: isMobile ? "100%" : 220,
       alignItems: "center",
-      backgroundColor: theme.colors.primary,
+      paddingVertical: theme.spacingValues.md,
+      borderRightWidth: isMobile ? 0 : 1,
+      borderBottomWidth: isMobile ? 1 : 0,
+      borderColor: theme.colors.border,
     },
 
     title: {
-      color: theme.colors.text,
-      fontSize: theme.typography.fontSize.lg,
+      color: theme.colors.primary,
+      fontSize: theme.typography.fontSize.xl,
+      fontWeight: "bold",
       textAlign: "center",
-      marginVertical: theme.spacingValues.md,
+      marginVertical: theme.spacingValues.lg,
+      marginTop: theme.spacingValues.xl,
     },
 
     ContainerMenu: {
       flex: 1,
+      flexDirection: "column",
+      width: "100%",
+      paddingHorizontal: theme.spacingValues.sm,
     },
 
     item: {
-      padding: theme.spacingValues.sm,
+      flexDirection: "row",
+      alignItems: "center",
+      paddingVertical: theme.spacingValues.sm,
+      paddingHorizontal: theme.spacingValues.md,
       borderRadius: theme.borderRadius.md,
+      marginVertical: theme.spacingValues.xs,
+      width: "100%",
+    },
+
+    itemText: {
+      color: theme.colors.textSecondary,
+      fontSize: theme.typography.fontSize.md,
+      marginLeft: theme.spacingValues.md,
     },
 
     activeItem: {
-      padding: theme.spacingValues.sm,
+      backgroundColor: theme.colors.interaction.focus,
+      paddingVertical: theme.spacingValues.sm,
+      paddingHorizontal: theme.spacingValues.md,
       borderRadius: theme.borderRadius.md,
-      backgroundColor: theme.colors.primary,
+      marginVertical: theme.spacingValues.xs,
+      width: "100%",
+    },
+
+    activeItemText: {
+      color: theme.colors.primary,
+      fontSize: theme.typography.fontSize.md,
+      fontWeight: "600",
+      marginLeft: theme.spacingValues.md,
     },
   });

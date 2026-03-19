@@ -1,39 +1,33 @@
 import { Theme } from "./types";
 
 export const lightTheme: Theme = {
-  // =========================
   // COLORS
-  // =========================
   colors: {
-    // Base
     background: "#F3F4F4",
     foreground: "#1F2937",
 
-    // Essential
     white: "#FFFFFF",
     black: "#000000",
 
-    // Brand
     primary: "#A8557A",
     primaryForeground: "#FFFFFF",
 
     secondary: "#6B2136",
     secondaryForeground: "#FFFFFF",
 
-    // Primary system colors (ajustados a tu tono)
-    blue: "#3B82F6", // Azul moderno (no muy frío)
+    blue: "#3B82F6",
     blueForeground: "#FFFFFF",
 
-    red: "#DC2626", // Rojo ligeramente más profundo que el error
+    red: "#DC2626",
     redForeground: "#FFFFFF",
 
-    yellow: "#FBBF24", // Amarillo cálido (menos chillón)
+    yellow: "#FBBF24",
     yellowForeground: "#1F2937",
 
-    green: "#22C55E", // Verde natural (alineado con success)
+    green: "#22C55E",
     greenForeground: "#FFFFFF",
 
-    // UI surfaces
+    // Card
     card: "#FFFFFF",
     cardForeground: "#1F2937",
 
@@ -47,7 +41,6 @@ export const lightTheme: Theme = {
     error: "#EF4444",
     info: "#007AFF",
 
-    // Extended neutrals (MUY útiles en UI compleja)
     gray50: "#F9FAFB",
     gray100: "#F3F4F6",
     gray200: "#E5E7EB",
@@ -82,9 +75,7 @@ export const lightTheme: Theme = {
     foregroundDisabled: "#9CA3AF",
   },
 
-  // =========================
   // OPACITY SYSTEM
-  // =========================
   opacity: {
     disabled: 0.5,
     hover: 0.8,
@@ -92,9 +83,7 @@ export const lightTheme: Theme = {
     focus: 0.7,
   },
 
-  // =========================
   // SPACING
-  // =========================
   spacing: (v: number) => v * 8,
 
   spacingValues: {
@@ -107,9 +96,7 @@ export const lightTheme: Theme = {
     xxl: 40,
   },
 
-  // =========================
   // BORDER RADIUS
-  // =========================
   borderRadius: {
     none: 0,
     sm: 4,
@@ -119,9 +106,7 @@ export const lightTheme: Theme = {
     full: 999,
   },
 
-  // =========================
   // BORDERS
-  // =========================
   borders: {
     width: {
       thin: 1,
@@ -129,9 +114,7 @@ export const lightTheme: Theme = {
     },
   },
 
-  // =========================
   // TYPOGRAPHY
-  // =========================
   typography: {
     fontFamily: {
       regular: "System",
@@ -170,9 +153,7 @@ export const lightTheme: Theme = {
     },
   },
 
-  // =========================
   // SHADOWS
-  // =========================
   shadows: {
     sm: {
       shadowColor: "#000",
@@ -194,9 +175,7 @@ export const lightTheme: Theme = {
     },
   },
 
-  // =========================
   // Z-INDEX
-  // =========================
   zIndex: {
     base: 0,
     dropdown: 10,
@@ -204,9 +183,7 @@ export const lightTheme: Theme = {
     toast: 1000,
   },
 
-  // =========================
   // MOTION (mejor que transitions)
-  // =========================
   motion: {
     duration: {
       fast: 100,
@@ -215,9 +192,7 @@ export const lightTheme: Theme = {
     },
   },
 
-  // =========================
   // LAYOUT
-  // =========================
   layout: {
     container: {
       flexDirection: "column",
@@ -226,9 +201,7 @@ export const lightTheme: Theme = {
     },
   },
 
-  // =========================
   // COMPONENT TOKENS
-  // =========================
   components: {
     button: {
       height: 48,
@@ -258,9 +231,7 @@ export const lightTheme: Theme = {
     },
   },
 
-  // =========================
-  // VARIANTS (CLAVE PARA FRAMEWORK)
-  // =========================
+  // VARIANTS
   variants: {
     button: {
       primary: {
@@ -278,9 +249,7 @@ export const lightTheme: Theme = {
     },
   },
 
-  // =========================
   // SIZES
-  // =========================
   sizes: {
     icon: {
       sm: 16,
@@ -289,9 +258,7 @@ export const lightTheme: Theme = {
     },
   },
 
-  // =========================
   // ACCESSIBILITY
-  // =========================
   accessibility: {
     focusRing: {
       width: 2,
